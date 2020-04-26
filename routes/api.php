@@ -23,4 +23,5 @@ Route::group(['middleware' => 'jwt.auth'], function () {
     Route::post('logout', 'API\APILoginController@logout');
     Route::post('refresh', 'API\APILoginController@refresh');
     Route::get('me', 'API\APILoginController@me');
+    Route::get('all', 'API\APILoginController@allUser');
 });

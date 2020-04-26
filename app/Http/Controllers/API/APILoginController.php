@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\API;
 
+use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -21,6 +22,12 @@ class APILoginController extends Controller
     public function me()
     {
         return response()->json(auth()->user());
+    }
+
+    public function allUser()
+    {
+        $listUser = User::paginate(1);
+        return response()->json($listUser);
     }
 
     public function logout()
